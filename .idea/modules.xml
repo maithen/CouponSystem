@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CouponSystem/CouponSystem.iml" filepath="$PROJECT_DIR$/CouponSystem/CouponSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../java/jargon2-api-master/jargon2-api.iml" filepath="$PROJECT_DIR$/../../java/jargon2-api-master/jargon2-api.iml" />
+    </modules>
+  </component>
+</project>

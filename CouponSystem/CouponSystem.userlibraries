@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="c3p0-0.9.5.4">
+    <archive path="M:/Programming/java/c3p0-0.9.5.4/lib/c3p0-0.9.5.4.jar" />
+    <archive path="M:/Programming/java/c3p0-0.9.5.4/lib/mchange-commons-java-0.2.15.jar" />
+  </library>
+  <library name="mysql-connector-java-8.0.15">
+    <archive path="M:/Programming/Oxygen/CouponSystem/lib/mysql-connector-java-8.0.15.jar" />
+  </library>
+  <library name="mysql-connector-java-8.0.15">
+    <archive path="M:/Programming/Oxygen/CouponSystem/lib/mysql-connector-java-8.0.15.jar" />
+  </library>
+</eclipse-userlibraries>
+
