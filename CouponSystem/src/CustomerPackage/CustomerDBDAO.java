@@ -355,6 +355,7 @@ public class CustomerDBDAO implements CustomerDAO{
             // e.printStackTrace();
         }finally {
             connection.returnConnection(myCon);
+            if(myCon!=null)
             try {
                 myCon.close();
             } catch (SQLException e) {

@@ -3,12 +3,13 @@ package CustomerPackage;
 import CouponPackage.Coupon;
 import CouponPackage.CouponDBDAO;
 import CouponPackage.couponTypes;
+import Main.Client;
 
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class CustomerFacade implements CustomerFCI {
+public class CustomerFacade extends Client implements CustomerFCI {
 
     CustomerDBDAO customerDBDAO = new CustomerDBDAO();
     CouponDBDAO couponDBDAO = new CouponDBDAO();

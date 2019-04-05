@@ -8,7 +8,6 @@ import java.util.Collection;
 
 public interface AdminFCI {
 
-    boolean login(String username, String password);
     void addCompany(Company company);
     void removeCompany(Company company);
     void updateCompany(Company company);

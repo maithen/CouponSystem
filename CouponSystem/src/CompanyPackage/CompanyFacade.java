@@ -3,12 +3,13 @@ package CompanyPackage;
 import CouponPackage.Coupon;
 import CouponPackage.CouponDBDAO;
 import CouponPackage.couponTypes;
+import Main.Client;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class CompanyFacade implements CompanyFCI{
+public class CompanyFacade extends Client implements CompanyFCI{
 
     CouponDBDAO couponDBDAO = new CouponDBDAO();
     Company company = new Company();

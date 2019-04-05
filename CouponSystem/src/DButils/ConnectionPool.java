@@ -16,6 +16,7 @@ public final class ConnectionPool implements CPI{
     private int listSize = 10;
     private static List<Connection> connections ;
     private static List<Connection> usedConnections = new ArrayList<>();
+    private Connection connection;
     public static ConnectionPool getInstance(){
         if(connectionPool==null){
             connectionPool = new ConnectionPool();
@@ -32,28 +33,27 @@ public final class ConnectionPool implements CPI{
          Collections.synchronizedList(usedConnections);
         System.out.println("Setting up connections...");
         for(int i=0;i<listSize;i++){
-            Connection myCon = null;
+
             try {
-                myCon = DriverManager.getConnection(DButil.connectionURL(),"client","123123");
+                connection = DriverManager.getConnection(DButil.connectionURL(),"client","123123");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            connections.add(myCon);
-            myCon= null;
+            connections.add(connection);
+            connection= null;
         }
         System.out.println(connections.size() + " Connections set up.");
     }
 
     @Override
-    public Connection getConnection() {
-        Connection connection = null;
+    public Connection getConnection() { ;
         synchronized (usedConnections) {
             usedConnections.add(connection);
         }
 
         synchronized (connections){
-                connections.remove(0);
-                return connection;
+               return connections.remove(0);
+
             }
 
 
@@ -62,17 +62,16 @@ public final class ConnectionPool implements CPI{
     @Override
     public boolean returnConnection(Connection connection) {
         try {
-            connection.close();
-            connection=DriverManager.getConnection(DButil.connectionURL(),"matan","123123");
+            this.connection=DriverManager.getConnection(DButil.connectionURL(),"client","123123");
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         synchronized (connections){
-            connections.add(connection);
+            connections.add(this.connection);
         };
         synchronized (usedConnections){
-            return usedConnections.remove(connection);
+            return usedConnections.remove(this.connection);
         }
     }
 

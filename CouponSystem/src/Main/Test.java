@@ -18,7 +18,10 @@ public class Test  {
     public static void main(String[] args) {
         CouponSystem couponSystem = CouponSystem.getInstance();
 
-      couponSystem.login("shimi","shimi",clientType.Customer);
+      couponSystem.login("Admin","1234",clientType.Admin);
+      couponSystem.getAdminFacade();
+
+
 
     }
 }
