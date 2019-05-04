@@ -2,36 +2,32 @@ package Main;
 
 import Admin.AdminFacade;
 import CompanyPackage.CompanyFacade;
-import CustomerPackage.Customer;
 import CustomerPackage.CustomerFacade;
 import DButils.ConnectionPool;
-import Exceptions.DoesNotExistException;
 
 
 public class CouponSystem implements CouponClientFacade{
-    private static Client client;
+
     private static CouponSystem couponSystem = new CouponSystem();
 
 
     private CouponSystem() {
-
+        Thread couponDelete = new Thread(new DailyCouponExpirationTask());
+        couponDelete.start();
     }
 
-
     @Override
-    public void login(String name, String password, clientType type)  {
+    public CouponClientFacade login(String name, String password, clientType type)  {
 
         switch (type) {
             case Admin:
-                 client = new AdminFacade(name,password,type);
-                break;
+                return new AdminFacade().login(name,password,type);
             case Company:
-               client = new CompanyFacade(name, password);
-                break;
+               return new CompanyFacade(name,password).login(name,password,type);
             case Customer:
-                client = new CustomerFacade(name, password);
-                break;
+                return new CustomerFacade(name,password).login(name, password,type);
         }
+        return null;
     }
 
 
@@ -40,17 +36,9 @@ public class CouponSystem implements CouponClientFacade{
         return couponSystem;
     }
 
-   private void shutdown(){
+    private void shutdown(){
         ConnectionPool.getInstance().closeAllConnections();
    }
 
-    public static AdminFacade getAdminFacade(){
-        return (AdminFacade) client;
 
-    } public static CustomerFacade getCustomerFacade(){
-        return (CustomerFacade) client;
-
-    } public static CompanyFacade getCompanyFacade(){
-        return (CompanyFacade) client;
-    }
 }

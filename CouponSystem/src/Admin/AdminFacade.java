@@ -11,24 +11,26 @@ import Main.clientType;
 
 import java.util.Collection;
 
-public class AdminFacade extends Client implements AdminFCI, CouponClientFacade {
+public class AdminFacade implements AdminFCI, CouponClientFacade {
 
-    CompanyDBDAO companyDBDAO = new CompanyDBDAO();
-    CustomerDBDAO customerDBDAO = new CustomerDBDAO();
+    private CompanyDBDAO companyDBDAO = new CompanyDBDAO();
+    private CustomerDBDAO customerDBDAO = new CustomerDBDAO();
 
-    public AdminFacade(String name, String password, clientType type){
-        login(name,password,type);
-
+    public AdminFacade(){
     }
+
     @Override
     public void addCompany (Company company){
                     companyDBDAO.createCompany(company);
                 }
+
     @Override
     public void removeCompany (Company company){
                     companyDBDAO.removeCompany(company);
 
-    }@Override
+    }
+
+    @Override
     public void updateCompany (Company company){
                     companyDBDAO.updateCompany(company);
 
@@ -73,10 +75,11 @@ public class AdminFacade extends Client implements AdminFCI, CouponClientFacade 
     }
 
     @Override
-    public void login (String name, String password, clientType type){
+    public CouponClientFacade login (String name, String password, clientType type){
 
         if (name.equals("Admin") && password.equals("1234") && type.equals(clientType.Admin)) {
             System.out.println("login succesful");
+            return new AdminFacade();
         }else{
             throw new DoesNotExistException("Admin account does not exist");
         }

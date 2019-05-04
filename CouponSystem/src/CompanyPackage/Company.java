@@ -4,6 +4,7 @@ import CouponPackage.Coupon;
 
 import java.util.*;
 
+
 public class Company {
 
     private long id;
@@ -12,6 +13,13 @@ public class Company {
     private String email;
     private List<Coupon> couponList = new ArrayList<>();
 
+    /**
+     * constructor for class,
+     * @param id = companys ID
+     * @param name  = company's name
+     * @param email = company's email
+     * @param password = company's password.
+     */
     public Company(long id, String name, String password, String email) {
         this.id = id;
         this.name = name;
@@ -68,6 +76,9 @@ public class Company {
         couponList.add(coupon);
     }
 
+    /**
+     * @return returns details, password censored.
+     */
     @Override
     public String toString() {
         return String.format(

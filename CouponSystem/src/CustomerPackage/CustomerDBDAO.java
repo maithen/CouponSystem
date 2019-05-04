@@ -16,8 +16,8 @@ import java.util.Collection;
 
 public class CustomerDBDAO implements CustomerDAO{
 
-    ConnectionPool connection = ConnectionPool.getInstance();
-    CouponDBDAO couponDBDAO = new CouponDBDAO();
+
+    private CouponDBDAO couponDBDAO = new CouponDBDAO();
 
     @Override
     public void createCustomer(Customer c1){
@@ -26,7 +26,7 @@ public class CustomerDBDAO implements CustomerDAO{
 
         try {
 
-                myCon = connection.getConnection();
+                myCon = ConnectionPool.getInstance().getConnection();
                 PreparedStatement myPstmt = myCon.prepareStatement(sql);
                 myPstmt.setLong(1, c1.getId());
                 myPstmt.setString(2, c1.getCustomerName());
@@ -46,12 +46,8 @@ public class CustomerDBDAO implements CustomerDAO{
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-                connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
         }
 
     }
@@ -59,9 +55,9 @@ public class CustomerDBDAO implements CustomerDAO{
     @Override
     public void removeCustomer(Customer c1) {
         Connection myCon = null;
-        PreparedStatement myStmt = null;
+        PreparedStatement myStmt;
         try{
-            myCon = connection.getConnection();
+            myCon = ConnectionPool.getInstance().getConnection();
             String sql = "DELETE FROM customers WHERE ID_=? && Customer_name=? && password=?";
 
             myStmt = myCon.prepareStatement(sql);
@@ -78,21 +74,17 @@ public class CustomerDBDAO implements CustomerDAO{
         }catch(SQLException e){
             e.printStackTrace();
         }finally {
-            connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
         }
     }
 
     @Override
     public void updateCustomer(Customer c1) {
         Connection myCon = null;
-        PreparedStatement myStmt = null;
+        PreparedStatement myStmt;
         try{
-            myCon = connection.getConnection();
+            myCon = ConnectionPool.getInstance().getConnection();
             String sql = "UPDATE customers SET ID_=?, Customer_name=?, Password=? WHERE ID_=?";
 
             myStmt = myCon.prepareStatement(sql);
@@ -110,22 +102,18 @@ public class CustomerDBDAO implements CustomerDAO{
         }catch(SQLException e){
             e.printStackTrace();
         }finally {
-            connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
         }
     }
 
     @Override
     public Customer getCustomer(long id) {
         Connection myCon = null;
-        Statement myStmt = null;
+        Statement myStmt;
         Customer customer = new Customer();
         try{
-            myCon = connection.getConnection();
+            myCon = ConnectionPool.getInstance().getConnection();
             myStmt = myCon.createStatement();
             String sql = "SELECT * FROM customers WHERE ID_="+id;
             ResultSet rs = myStmt.executeQuery(sql);
@@ -143,12 +131,8 @@ public class CustomerDBDAO implements CustomerDAO{
             new SQLException("SERIOUS ISSUE ABORT");
         }finally {
 
-            connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
         }
 
         return customer;
@@ -157,10 +141,10 @@ public class CustomerDBDAO implements CustomerDAO{
     @Override
     public Customer getCustomer(String name, String password){
         Connection myCon = null;
-        Statement myStmt = null;
+        Statement myStmt;
         Customer customer = new Customer();
         try{
-            myCon = connection.getConnection();
+            myCon = ConnectionPool.getInstance().getConnection();
             String sql = "SELECT * FROM customers WHERE Customer_name='"+name+"' and Password='"+password+"';";
             myStmt = myCon.createStatement();
             ResultSet rs = myStmt.executeQuery(sql);
@@ -170,7 +154,6 @@ public class CustomerDBDAO implements CustomerDAO{
                 customer.setCustomerName(rs.getString(2));
                 customer.setPassword(rs.getString(3));
                 rs.close();
-                System.out.println(String.format("Customer Loaded"));
             }else{
                 throw new DoesNotExistException(customer);
             }
@@ -179,12 +162,8 @@ public class CustomerDBDAO implements CustomerDAO{
             new SQLException("SERIOUS ISSUE ABORT");
         }finally {
 
-            connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
         }
 
         return customer;
@@ -195,10 +174,10 @@ public class CustomerDBDAO implements CustomerDAO{
         Customer customer = new Customer();
         Collection<Customer> customers = new ArrayList<>();
         Connection myCon = null;
-        Statement myStmt = null;
+        Statement myStmt;
 
         try{
-            myCon = connection.getConnection();
+            myCon = ConnectionPool.getInstance().getConnection();
             myStmt = myCon.createStatement();
             String sql = "SELECT * FROM customers";
             ResultSet rs = myStmt.executeQuery(sql);
@@ -215,12 +194,8 @@ public class CustomerDBDAO implements CustomerDAO{
             new SQLException("SERIOUS ISSUE ABORT");
         }finally {
 
-            connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
         }
         if(customers.isEmpty()){
             throw new DoesNotExistException(customers,"Customers");
@@ -231,9 +206,9 @@ public class CustomerDBDAO implements CustomerDAO{
 
     @Override
     public void purchaseCoupon(Coupon coupon, Customer customer){
-        Connection myCon = connection.getConnection();
+        Connection myCon = ConnectionPool.getInstance().getConnection();
         String sql = "INSERT INTO customer_coupons (customerID_, couponID_) VALUES (?,?)";
-        PreparedStatement myStmt = null;
+        PreparedStatement myStmt;
         try {
             myStmt = myCon.prepareStatement(sql);
             myStmt.setLong(1, customer.getId());
@@ -247,12 +222,8 @@ public class CustomerDBDAO implements CustomerDAO{
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
-            connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
         }
 
     }
@@ -265,7 +236,7 @@ public class CustomerDBDAO implements CustomerDAO{
 
         try{
 
-            myCon = connection.getConnection();
+            myCon = ConnectionPool.getInstance().getConnection();
             myStmt = myCon.createStatement();
 
             String sql = "SELECT coupons.* FROM coupons " +
@@ -292,12 +263,8 @@ public class CustomerDBDAO implements CustomerDAO{
             new SQLException("SERIOUS ISSUE ABORT");
         }finally {
 
-            connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
         }
         if(coupons.isEmpty()){
             throw new DoesNotExistException(coupons,"Coupons");
@@ -337,7 +304,7 @@ public class CustomerDBDAO implements CustomerDAO{
         Connection myCon = null;
         try {
 
-            myCon = connection.getConnection();
+            myCon = ConnectionPool.getInstance().getConnection();
             String sql = " SELECT Customer_name,password FROM customers WHERE Customer_name='"+customerName+"' and Password='"+password+"';";
             Statement myStmt = myCon.createStatement();
             ResultSet rs = myStmt.executeQuery(sql);
@@ -354,13 +321,8 @@ public class CustomerDBDAO implements CustomerDAO{
 
             // e.printStackTrace();
         }finally {
-            connection.returnConnection(myCon);
-            if(myCon!=null)
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
         }
 
         throw new DoesNotExistException("Password is Case Sensitive.");

@@ -3,9 +3,12 @@ package CouponPackage;
 import CompanyPackage.Company;
 import DButils.ConnectionPool;
 
+
+import DButils.DButil;
 import Exceptions.DoesNotExistException;
 import Exceptions.DuplicateException;
 import Exceptions.RemoveException;
+import com.mchange.util.AlreadyExistsException;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -13,26 +16,26 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+
 public class CouponDBDAO implements CouponDAO {
 
     public CouponDBDAO(){
+
     }
-    private ConnectionPool connection = ConnectionPool.getInstance();
+
 
     @Override
     public void createCoupon(Coupon c1, Company company)  {
-        Connection myCon = null;
-        PreparedStatement myStmt = null;
+        Connection myCon = ConnectionPool.getInstance().getConnection();
+        String sql = "INSERT INTO coupondb.coupons VALUES (?,?,?,?,?,?,?,?,?); ";
+
         try {
+            PreparedStatement myStmt = myCon.prepareStatement(sql);
             for (Coupon c : getAllCoupons()){
                 if(c.getTitle().toLowerCase().equals(c1.getTitle().toLowerCase())){
                     throw new DuplicateException(c1,c1.getTitle());
-
                 }
             }
-            myCon = connection.getConnection();
-            String sql = "INSERT INTO coupondb.coupons VALUES (?,?,?,?,?,?,?,?,?); ";
-            myStmt = myCon.prepareStatement(sql);
 
             myStmt.setLong(1, c1.getId());
             myStmt.setString(2, c1.getTitle());
@@ -46,33 +49,29 @@ public class CouponDBDAO implements CouponDAO {
             myStmt.executeUpdate();
 
             sql = "INSERT INTO coupondb.company_coupons VALUES (?,?)";
+            myStmt.clearParameters();
             myStmt = myCon.prepareStatement(sql);
             myStmt.setLong(1,company.getId());
             myStmt.setLong(2,c1.getId());
             myStmt.executeUpdate();
-
             myStmt.close();
         }catch(SQLIntegrityConstraintViolationException sie){
-            throw new DuplicateException(c1,c1.getId());
+            throw new  DuplicateException(c1,c1.getId());
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
 
-            connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
             }
-        }
     }
 
     @Override
     public void removeCoupon(Coupon c1) {
             Connection myCon = null;
-            PreparedStatement myStmt = null;
+            PreparedStatement myStmt;
             try {
-                myCon = connection.getConnection();
+                myCon = ConnectionPool.getInstance().getConnection();
                 String sql = "DELETE FROM coupons WHERE ID_=?;";
                 myStmt = myCon.prepareStatement(sql);
                 myStmt.setLong(1, c1.getId());
@@ -86,12 +85,8 @@ public class CouponDBDAO implements CouponDAO {
                 e.printStackTrace();
 
             } finally {
-                connection.returnConnection(myCon);
-                try {
-                    myCon.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                ConnectionPool.getInstance().returnConnection(myCon);
+                DButil.closingConnection(myCon);
             }
 
     }
@@ -99,9 +94,9 @@ public class CouponDBDAO implements CouponDAO {
     @Override
     public void updateCoupon(Coupon c1){
         Connection myCon = null;
-        PreparedStatement myStmt = null;
+        PreparedStatement myStmt;
         try {
-            myCon = connection.getConnection();
+            myCon = ConnectionPool.getInstance().getConnection();
 
             String sql = "UPDATE coupons " +
                     "SET " +
@@ -129,15 +124,10 @@ public class CouponDBDAO implements CouponDAO {
             }
 
         } catch (SQLException e) {
-            System.err.printf("Unexpcted Problem");
+            System.out.println(e.getMessage());
         } finally {
-            connection.returnConnection(myCon);
-            try {
-                myStmt.close();
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
 
         }
     }
@@ -147,10 +137,10 @@ public class CouponDBDAO implements CouponDAO {
         Coupon coupon = null;
         Connection myCon = null;
         Statement myStmt;
-        ResultSet rs = null;
+        ResultSet rs;
 
         try {
-            myCon = connection.getConnection();
+            myCon = ConnectionPool.getInstance().getConnection();
             String sql = "SELECT * FROM coupons WHERE ID_="+id;
             myStmt = myCon.createStatement();
             myStmt.executeQuery(sql);
@@ -173,18 +163,12 @@ public class CouponDBDAO implements CouponDAO {
                 coupon.setEndDate(endDate);
 
                 rs.close();
-            }else {
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
         }
         return coupon;
     }
@@ -193,17 +177,14 @@ public class CouponDBDAO implements CouponDAO {
     public Collection<Coupon> getAllCoupons()  {
         Set<Coupon> coupons = new HashSet<>();
         Coupon coupon;
-        Connection myCon = null;
-        Statement myStmt;
-
-
+        Connection myCon = ConnectionPool.getInstance().getConnection();
+        PreparedStatement myStmt ;
         try {
-            myCon = connection.getConnection();
             String sql = "SELECT * FROM coupons";
-            myStmt = myCon.createStatement();
+            myStmt = myCon.prepareStatement(sql);
             myStmt.executeQuery(sql);
-
             ResultSet rs = myStmt.getResultSet();
+
             while (rs.next()) {
                 long id_ = rs.getLong(1);
                 String title = rs.getString(2);
@@ -224,17 +205,13 @@ public class CouponDBDAO implements CouponDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-                connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+             DButil.closingConnection(myCon);
+
         }
-        if(coupons.isEmpty()){
-            throw new DoesNotExistException(coupons,"Coupons");
-        }
-        return coupons;
+            return coupons;
+
+
     }
 
     @Override
@@ -244,9 +221,9 @@ public class CouponDBDAO implements CouponDAO {
         Connection myCon = null;
 
         try {
-            myCon = connection.getConnection();
+            myCon = ConnectionPool.getInstance().getConnection();
             String sql = "SELECT * FROM coupons WHERE TYPE='" + type+"';";
-            Statement myStmt = myCon.createStatement();
+            Statement myStmt = myCon.prepareStatement(sql);
             myStmt.executeQuery(sql);
 
             ResultSet rs = myStmt.getResultSet();
@@ -270,12 +247,8 @@ public class CouponDBDAO implements CouponDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-               connection.returnConnection(myCon);
-            try {
-                myCon.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            ConnectionPool.getInstance().returnConnection(myCon);
+            DButil.closingConnection(myCon);
         }
         if(coupons.isEmpty()){
             throw new DoesNotExistException(coupons,"Coupons");
@@ -290,7 +263,6 @@ public class CouponDBDAO implements CouponDAO {
             updateCoupon(c1);
         }else{
             System.out.println("Coupon Sold out!");
-            return;
         }
     }
 }

@@ -1,25 +1,21 @@
 package Main;
+
 import Admin.AdminFacade;
-import CompanyPackage.*;
-
-
+import CompanyPackage.Company;
+import CompanyPackage.CompanyFacade;
 import CouponPackage.Coupon;
-import CouponPackage.CouponDBDAO;
 import CouponPackage.couponTypes;
-import CustomerPackage.Customer;
 import CustomerPackage.CustomerFacade;
 import DButils.DButil;
-
-import java.time.LocalDate;
-
+import sun.security.pkcs11.Secmod;
 
 public class Test  {
 
     public static void main(String[] args) {
-        CouponSystem couponSystem = CouponSystem.getInstance();
 
-      couponSystem.login("Admin","1234",clientType.Admin);
-      couponSystem.getAdminFacade();
+
+        CustomerFacade cf = (CustomerFacade) CouponSystem.getInstance().login("Shimi","shimi",clientType.Customer);
+        System.out.println(cf.getCustomerInfo());
 
 
 

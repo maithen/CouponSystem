@@ -1,12 +1,14 @@
 package DButils;
 
+import Exceptions.ConnectionError;
+import Exceptions.DoesNotExistException;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 import java.sql.*;
 
 public class DButil {
 
-    private static String conURL = "jdbc:mysql://localhost:3306/coupondb?&serverTimezone=Israel";
+    private static String conURL = "jdbc:mysql://localhost:3306/coupondb?&serverTimezone=Israel&autoReconnect=true";
     private static String conUSER = "company";
     private static String conPASS = "123123";
 
@@ -77,7 +79,7 @@ public class DButil {
 
     public static void createCouponTable(){
         Statement myStmt = null;
-        Connection myCon = null;
+        Connection myCon;
         try {
             myCon = DriverManager.getConnection(conURL,"matan","123123");
             myStmt = myCon.createStatement();
@@ -108,7 +110,7 @@ public class DButil {
 
     public static void createCompanyCouponTable(){
         Statement myStmt=null;
-        Connection myCon = null;
+        Connection myCon;
         try {
             myCon = DriverManager.getConnection(conURL,"matan","123123");
             myStmt = myCon.createStatement();
@@ -117,8 +119,8 @@ public class DButil {
         }
 
         String sql = "CREATE TABLE IF NOT EXISTS company_coupons(companyID_ BIGINT NOT NULL, couponID_ BIGINT NOT NULL PRIMARY KEY," +
-                " FOREIGN KEY (companyID_) REFERENCES companies(ID_) ON DELETE CASCADE, " +
-                "FOREIGN KEY (couponID_) REFERENCES coupons(ID_) ON DELETE CASCADE);" ;
+                " FOREIGN KEY (companyID_) REFERENCES companies(ID_) ON DELETE CASCADE," +
+                " FOREIGN KEY (couponID_) REFERENCES coupons(ID_) ON DELETE CASCADE);" ;
 
         try {
             myStmt.executeUpdate(sql);
@@ -130,9 +132,9 @@ public class DButil {
 
     public static void createCustomerCouponTable(){
         Statement myStmt = null;
-        Connection myCon = null;
+        Connection myCon ;
         try {
-            myCon = DriverManager.getConnection(conURL,"matan","123123");;
+            myCon = DriverManager.getConnection(conURL,"matan","123123");
             myStmt = myCon.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -157,5 +159,21 @@ public class DButil {
     }
     public static String connectionURL(){
         return conURL;
+    }
+
+    public static void closingConnection(Connection connection){
+
+            if(connection!=null){
+                try{
+                    connection.close();
+                }catch (SQLException e){
+                    System.err.println("Problem closing the connection... please try again");
+                }catch (Throwable ex){
+                    new ConnectionError("There was a problem closing the connection! \n " +
+                            "Please try again :)");
+                }
+
+            }
+
     }
 }

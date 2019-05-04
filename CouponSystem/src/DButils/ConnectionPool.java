@@ -15,8 +15,9 @@ public final class ConnectionPool implements CPI{
     private static ConnectionPool connectionPool = new ConnectionPool();
     private int listSize = 10;
     private static List<Connection> connections ;
-    private static List<Connection> usedConnections = new ArrayList<>();
+    private static List<Connection> usedConnections ;
     private Connection connection;
+
     public static ConnectionPool getInstance(){
         if(connectionPool==null){
             connectionPool = new ConnectionPool();
@@ -29,24 +30,26 @@ public final class ConnectionPool implements CPI{
         usedConnections = new ArrayList<>();
          connections = new ArrayList<>();
 
-         Collections.synchronizedList(connections);
-         Collections.synchronizedList(usedConnections);
+        connections= Collections.synchronizedList(new ArrayList<>());
+        usedConnections = Collections.synchronizedList(new ArrayList<>());
         System.out.println("Setting up connections...");
         for(int i=0;i<listSize;i++){
 
             try {
                 connection = DriverManager.getConnection(DButil.connectionURL(),"client","123123");
+                connections.add(connection);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            connections.add(connection);
-            connection= null;
+
+
         }
+        DButil.closingConnection(connection);
         System.out.println(connections.size() + " Connections set up.");
     }
 
     @Override
-    public Connection getConnection() { ;
+    public Connection getConnection() {
         synchronized (usedConnections) {
             usedConnections.add(connection);
         }
@@ -61,6 +64,7 @@ public final class ConnectionPool implements CPI{
 
     @Override
     public boolean returnConnection(Connection connection) {
+
         try {
             this.connection=DriverManager.getConnection(DButil.connectionURL(),"client","123123");
         } catch (SQLException e) {
@@ -69,9 +73,10 @@ public final class ConnectionPool implements CPI{
 
         synchronized (connections){
             connections.add(this.connection);
-        };
+        }
         synchronized (usedConnections){
-            return usedConnections.remove(this.connection);
+            usedConnections.remove(0);
+            return true;
         }
     }
 
@@ -80,11 +85,7 @@ public final class ConnectionPool implements CPI{
         usedConnections.forEach(this::returnConnection);
         while (connections.size() != 0) {
             for (Connection c : connections) {
-                try {
-                    c.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                DButil.closingConnection(c);
             }
             connections.clear();
         }

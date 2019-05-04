@@ -7,6 +7,4 @@ import CustomerPackage.CustomerFCI;
 
 public  abstract class Client {
 
-
-
 }

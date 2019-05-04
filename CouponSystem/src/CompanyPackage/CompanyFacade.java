@@ -4,22 +4,21 @@ import CouponPackage.Coupon;
 import CouponPackage.CouponDBDAO;
 import CouponPackage.couponTypes;
 import Main.Client;
+import Main.CouponClientFacade;
+import Main.clientType;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class CompanyFacade extends Client implements CompanyFCI{
+public class CompanyFacade  implements CompanyFCI,CouponClientFacade {
 
-    CouponDBDAO couponDBDAO = new CouponDBDAO();
-    Company company = new Company();
-    CompanyDBDAO companyDBDAO = new CompanyDBDAO();
+    private CouponDBDAO couponDBDAO = new CouponDBDAO();
+    private Company company ;
+    private CompanyDBDAO companyDBDAO = new CompanyDBDAO();
 
-    public CompanyFacade(String username, String password){
-        if(login(username,password)==true){
-            company=companyDBDAO.getCompany(username,password);
-        }
-
+    public CompanyFacade(String name, String password){
+        company = companyDBDAO.getCompany(name,password);
     }
 
     @Override
@@ -29,7 +28,6 @@ public class CompanyFacade extends Client implements CompanyFCI{
 
     @Override
     public void createCoupon(Coupon coupon) {
-
         couponDBDAO.createCoupon(coupon,company);
     }
 
@@ -84,4 +82,11 @@ public class CompanyFacade extends Client implements CompanyFCI{
     }
 
 
+    @Override
+    public CouponClientFacade login(String name, String password, clientType type) {
+        if(login(name,password) && type.equals(clientType.Company)){
+            return new CompanyFacade(name,password);
+        }
+        return null;
+    }
 }

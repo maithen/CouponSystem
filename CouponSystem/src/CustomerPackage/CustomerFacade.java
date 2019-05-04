@@ -4,22 +4,26 @@ import CouponPackage.Coupon;
 import CouponPackage.CouponDBDAO;
 import CouponPackage.couponTypes;
 import Main.Client;
+import Main.CouponClientFacade;
+import Main.clientType;
 
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class CustomerFacade extends Client implements CustomerFCI {
+public class CustomerFacade implements CustomerFCI, CouponClientFacade {
 
-    CustomerDBDAO customerDBDAO = new CustomerDBDAO();
-    CouponDBDAO couponDBDAO = new CouponDBDAO();
-    Customer customer= new Customer();
+    private CustomerDBDAO customerDBDAO = new CustomerDBDAO();
+    private CouponDBDAO couponDBDAO = new CouponDBDAO();
+    private Customer customer;
 
     public CustomerFacade(String name, String password) {
-        if(login(name,password)){
-         customer = customerDBDAO.getCustomer(name,password);
-        }
+            customer = customerDBDAO.getCustomer(name,password);
 
+    }
+
+    public Customer getCustomerInfo(){
+        return customer;
     }
 
     @Override
@@ -38,7 +42,6 @@ public class CustomerFacade extends Client implements CustomerFCI {
 
         return customerDBDAO.getCouponsByType(customer,type);
 
-
     }
 
     @Override
@@ -50,5 +53,13 @@ public class CustomerFacade extends Client implements CustomerFCI {
     @Override
     public boolean login(String custName, String password)  {
         return customerDBDAO.login(custName,password);
+    }
+
+    @Override
+    public CouponClientFacade login(String name, String password, clientType type) {
+        if(login(name,password) && type.equals(clientType.Customer)){
+            return new CustomerFacade(name,password);
+        }
+        return null;
     }
 }
