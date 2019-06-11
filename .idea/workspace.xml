@@ -8,25 +8,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09afe464-b718-491e-97e0-66b987f87077" name="Default Changelist" comment="changed login type from boolean to CouponClientFacade on AdminFacade,Customer Facade and CompanyFacade.">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_all_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_java_hamcrest_2_0_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Admin/AdminFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/Admin/AdminFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyDBDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyDBDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/Coupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/Coupon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/CouponDBDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/CouponDBDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerDBDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerDBDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/DButils/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/DButils/ConnectionPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/DButils/DButil.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/DButils/DButil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/ConnectionError.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/ConnectionError.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/DuplicateException.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/DuplicateException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/CouponSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/Main/CouponSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/bin/Main/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/src/CouponPackage/Coupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/src/CouponPackage/Coupon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/src/DButils/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/src/DButils/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/src/Exceptions/DuplicateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/src/Exceptions/DuplicateException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/src/Main/CouponSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/src/Main/CouponSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CouponSystem/src/Main/DailyCouponExpirationTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/src/Main/DailyCouponExpirationTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/.project" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/CouponSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/CouponSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Admin/AdminFCI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Admin/AdminFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/Company.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyDBDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyFCI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/Coupon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/CouponDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/CouponDBDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/couponTypes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerDBDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerFCI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/DButils/CPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/DButils/ConnectionPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/DButils/DButil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/ConnectionError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/DoesNotExistException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/DuplicateException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/RemoveException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/META-INF/CouponSystem.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/CouponClientFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/CouponSystem$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/CouponSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/clientType.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CouponSystem/src/Main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/src/Main/Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/CouponSystem/bin/" />
@@ -48,34 +71,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CouponSystem/src/CustomerPackage/CustomerFacade.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="114">
+              <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#812#813#0" expanded="true" />
-                <element signature="method#getAllCouponsByType#0;class#CustomerFacade#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CouponSystem/src/CouponPackage/Coupon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+            <state relative-caret-position="988">
+              <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
               <folding>
                 <element signature="e#1041#1042#0" expanded="true" />
                 <element signature="e#1075#1076#0" expanded="true" />
@@ -133,8 +154,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/DailyCouponExpirationTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+            <state relative-caret-position="494">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,15 +168,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3952">
               <caret line="220" column="49" selection-start-line="220" selection-start-column="49" selection-end-line="220" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/CouponSystem/lib/mysql-connector-java-8.0.15.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25308">
-              <caret line="1406" selection-start-line="1406" selection-end-line="1406" />
             </state>
           </provider>
         </entry>
@@ -197,7 +209,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -268,8 +286,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -279,17 +295,25 @@
             </path>
             <path>
               <item name="CouponSystemIDEA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="CouponSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CouponSystemIDEA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CouponSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CouponSystemIDEA" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,13 +321,13 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560159619851" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560250904298" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../java/jargon2-api-master" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -370,7 +394,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1035" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.85945946" visible="true" weight="0.26545843" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.85945946" visible="true" weight="0.27985075" />
       <window_info id="Structure" order="1" sideWeight="0.501002" side_tool="true" weight="0.2553305" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -380,15 +404,15 @@
       <window_info id="Favorites" order="7" sideWeight="0.14054054" side_tool="true" weight="0.2553305" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32992035" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29351535" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.34584755" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38794085" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32992035" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32992035" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32992035" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49946696" weight="0.32992035" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32992035" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.32992035" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49946696" visible="true" weight="0.32992035" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" visible="true" weight="0.34584755" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49946696" weight="0.32992035" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -428,6 +452,46 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout-to-restore>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed login type from boolean to CouponClientFacade on AdminFacade,Customer Facade and CompanyFacade." />
     <option name="LAST_COMMIT_MESSAGE" value="changed login type from boolean to CouponClientFacade on AdminFacade,Customer Facade and CompanyFacade." />
@@ -440,12 +504,6 @@
           <line>142</line>
           <properties />
           <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/CouponSystem/src/CustomerPackage/CustomerDBDAO.java</url>
-          <line>219</line>
-          <properties />
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -472,47 +530,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CouponSystem/src/CustomerPackage/CustomerDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Program Files/Java/jdk1.8.0_192/src.zip!/java/lang/Throwable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="266" column="5" lean-forward="true" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="5" />
-          <folding>
-            <element signature="e#26222#26223#0" expanded="true" />
-            <element signature="e#26265#26266#0" expanded="true" />
-            <element signature="e#26470#26471#0" expanded="true" />
-            <element signature="e#26528#26529#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CouponSystem/src/CompanyPackage/CompanyDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Program Files/Java/jdk1.8.0_192/src.zip!/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
-          <folding>
-            <element signature="e#1663#1664#0" expanded="true" />
-            <element signature="e#1693#1694#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/CouponSystem/lib/mysql-connector-java-8.0.15.jar!/com/mysql/cj/protocol/a/NativeMessageBuilder.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -693,16 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/CouponClientFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -856,6 +863,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/CouponSystem/lib/mysql-connector-java-8.0.15.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25308">
+          <caret line="1406" selection-start-line="1406" selection-end-line="1406" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CouponSystem/src/CustomerPackage/CustomerFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -864,6 +878,50 @@
             <element signature="imports" expanded="true" />
             <element signature="e#812#813#0" expanded="true" />
             <element signature="method#getAllCouponsByType#0;class#CustomerFacade#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CouponSystem/lib/jargon2-backends-master/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.project">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.classpath">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CouponSystemIDEA.userlibraries">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CouponSystem/src/CouponPackage/Coupon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+          <folding>
+            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#1075#1076#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -912,8 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/DailyCouponExpirationTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        <state relative-caret-position="494">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -924,13 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3952">
           <caret line="220" column="49" selection-start-line="220" selection-start-column="49" selection-end-line="220" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/CouponSystem/lib/mysql-connector-java-8.0.15.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25308">
-          <caret line="1406" selection-start-line="1406" selection-end-line="1406" />
         </state>
       </provider>
     </entry>
@@ -951,24 +1002,6 @@
           <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CouponSystem/src/CouponPackage/Coupon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
-          <folding>
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1075#1076#0" expanded="true" />
           </folding>
         </state>
       </provider>

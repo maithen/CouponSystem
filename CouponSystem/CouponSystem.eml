@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="c3p0-0.9.5.4.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/CouponSystem/lib/c3p0-0.9.5.4.jar!/"/>
+	</lib>
+	<lib name="mchange-commons-java-0.2.15.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/CouponSystem/lib/mchange-commons-java-0.2.15.jar!/"/>
+	</lib>
+	<lib name="mysql-connector-java-8.0.15.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/CouponSystem/lib/mysql-connector-java-8.0.15.jar!/"/>
+	</lib>
+	<levels>
+		<level name="c3p0-0.9.5.4" value="project"/>
+		<level name="mchange-commons-java-0.2.15" value="project"/>
+		<level name="mysql-connector-java-8.0.15" value="project"/>
+	</levels>
+</component>
