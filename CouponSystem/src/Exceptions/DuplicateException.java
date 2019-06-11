@@ -19,7 +19,7 @@ public class DuplicateException extends RuntimeException {
         super(o.getClass().getSimpleName()+" Name: " +name+ ", Already Exists.");
     }
     public DuplicateException(Coupon coupon){
-        super("Coupon: "+coupon.getTitle()+ ", Already Exists.");
+        super("Coupon Title: "+coupon.getTitle()+ ", Already Exists.");
     }
     public DuplicateException(Customer customer){
         super("Customer: "+customer.getCustomerName()+ ", Already Exists.");

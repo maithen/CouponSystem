@@ -19,9 +19,6 @@ public final class ConnectionPool implements CPI{
     private Connection connection;
 
     public static ConnectionPool getInstance(){
-        if(connectionPool==null){
-            connectionPool = new ConnectionPool();
-        }
         return connectionPool;
     }
 
@@ -44,7 +41,6 @@ public final class ConnectionPool implements CPI{
 
 
         }
-        DButil.closingConnection(connection);
         System.out.println(connections.size() + " Connections set up.");
     }
 

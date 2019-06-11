@@ -9,6 +9,7 @@ import java.time.LocalDate;
 public class DailyCouponExpirationTask implements Runnable {
     private CouponDBDAO cpd = new CouponDBDAO();
 
+
     @Override
     public void run() {
 
@@ -16,7 +17,7 @@ public class DailyCouponExpirationTask implements Runnable {
                 if(this.cpd.getAllCoupons().isEmpty()){
                     break;
                 }
-                if (coupon.getEndDate().equals(LocalDate.now())) {
+                if (coupon.getEndDate().isBefore(LocalDate.now())) {
                     this.cpd.removeCoupon(coupon);
                 }
             }
@@ -24,12 +25,13 @@ public class DailyCouponExpirationTask implements Runnable {
             try {
                 Thread.sleep(60 * 24 * 24 * 1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("thread has been stopped");
             }
         }
 
 
     public void stopTask(){
-        Thread.currentThread().interrupt();
+        Thread.currentThread().isInterrupted();
+        return;
     }
 }

@@ -16,9 +16,7 @@ public class Coupon {
     private double price;
     private String image;
 
-    public Coupon(){
 
-    }
     public Coupon(long id, String title, int amount, couponTypes type, String message, double price, String image) {
         LocalDate initialDate = LocalDate.now();
         setId(id);
@@ -30,6 +28,9 @@ public class Coupon {
         setMessage(message);
         setPrice(price);
         setImage(image);
+    }
+    public Coupon(){
+
     }
 
     public long getId() {

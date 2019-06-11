@@ -16,8 +16,11 @@ public class Test  {
 
         CustomerFacade cf = (CustomerFacade) CouponSystem.getInstance().login("Shimi","shimi",clientType.Customer);
         System.out.println(cf.getCustomerInfo());
+        CompanyFacade companyFacade = (CompanyFacade) CouponSystem.getInstance().login("ahah","10914", clientType.Company);
+        System.out.println(companyFacade.getCompanyInfo());
+        Coupon coupon = new Coupon(123,"best coupon",4,couponTypes.CAMPING,"the coupon of the camp",19.99,"img.kaki");
 
-
+        System.out.println(cf.getAllPurchasedCoupons());
 
     }
 }

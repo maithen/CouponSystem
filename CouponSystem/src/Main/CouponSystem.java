@@ -9,11 +9,11 @@ import DButils.ConnectionPool;
 public class CouponSystem implements CouponClientFacade{
 
     private static CouponSystem couponSystem = new CouponSystem();
-
+    private Thread couponDelete = new Thread(new DailyCouponExpirationTask());
 
     private CouponSystem() {
-        Thread couponDelete = new Thread(new DailyCouponExpirationTask());
         couponDelete.start();
+
     }
 
     @Override
@@ -36,8 +36,9 @@ public class CouponSystem implements CouponClientFacade{
         return couponSystem;
     }
 
-    private void shutdown(){
+    public void shutdown(){
         ConnectionPool.getInstance().closeAllConnections();
+        couponDelete.interrupt();
    }
 
 
