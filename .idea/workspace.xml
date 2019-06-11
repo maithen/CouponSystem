@@ -7,7 +7,51 @@
     <bookmark url="file://$PROJECT_DIR$/CouponSystem/src/CompanyPackage/CompanyDBDAO.java" line="151" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09afe464-b718-491e-97e0-66b987f87077" name="Default Changelist" comment="changed login type from boolean to CouponClientFacade on AdminFacade,Customer Facade and CompanyFacade." />
+    <list default="true" id="09afe464-b718-491e-97e0-66b987f87077" name="Default Changelist" comment="changed login type from boolean to CouponClientFacade on AdminFacade,Customer Facade and CompanyFacade.">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_all_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_java_hamcrest_2_0_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/.project" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/CouponSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/CouponSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Admin/AdminFCI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Admin/AdminFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/Company.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyDBDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyFCI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CompanyPackage/CompanyFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/Coupon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/CouponDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/CouponDBDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CouponPackage/couponTypes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerDBDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerFCI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/CustomerPackage/CustomerFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/DButils/CPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/DButils/ConnectionPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/DButils/DButil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/ConnectionError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/DoesNotExistException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/DuplicateException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Exceptions/RemoveException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/META-INF/CouponSystem.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/CouponClientFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/CouponSystem$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/CouponSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/bin/Main/clientType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CouponSystem/src/Main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/CouponSystem/src/Main/Test.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/CouponSystem/bin/" />
     <ignored path="$PROJECT_DIR$/../../java/jargon2-api-master/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="114">
+              <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -271,8 +312,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -353,7 +394,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1035" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.85945946" visible="true" weight="0.28304905" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.85945946" visible="true" weight="0.27985075" />
       <window_info id="Structure" order="1" sideWeight="0.501002" side_tool="true" weight="0.2553305" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -859,11 +900,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CouponSystem/src/Main/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="114">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
         </state>
       </provider>
     </entry>

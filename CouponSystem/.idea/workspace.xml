@@ -43,12 +43,12 @@
         <option value="$PROJECT_DIR$/src/Customer/Customer.java" />
         <option value="$PROJECT_DIR$/src/Coupon/couponTypes.java" />
         <option value="$PROJECT_DIR$/src/Coupon/Coupon.java" />
-        <option value="$PROJECT_DIR$/src/Main/DButil.java" />
-        <option value="$PROJECT_DIR$/src/DButils/ConnectionPool.java" />
-        <option value="$PROJECT_DIR$/src/DButils/DButil.java" />
+        <option value="$PROJECT_DIR$/src/com.main/DButil.java" />
+        <option value="$PROJECT_DIR$/src/com.dbutils/ConnectionPool.java" />
+        <option value="$PROJECT_DIR$/src/com.dbutils/DButil.java" />
         <option value="$PROJECT_DIR$/src/Company/CompanyDBDAO.java" />
         <option value="$PROJECT_DIR$/src/Company/CompanyDAO.java" />
-        <option value="$PROJECT_DIR$/src/Main/Test.java" />
+        <option value="$PROJECT_DIR$/src/com.main/Test.java" />
       </list>
     </option>
   </component>
@@ -80,7 +80,7 @@
               <item name="CouponSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="CouponSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Main" type="462c0819:PsiDirectoryNode" />
+              <item name="com.main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CouponSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -125,11 +125,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main.Test" />
+      <option name="MAIN_CLASS_NAME" value="com.main.Test" />
       <module name="CouponSystem" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DButils.*" />
+          <option name="PATTERN" value="com.dbutils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -456,7 +456,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DButils/ConnectionPool.java">
+    <entry file="file://$PROJECT_DIR$/src/com.dbutils/ConnectionPool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
@@ -494,7 +494,7 @@
     <entry file="file://$PROJECT_DIR$/.idea/libraries/c3p0_0_9_5_4.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/com.main/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
@@ -504,7 +504,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DButils/DButil.java">
+    <entry file="file://$PROJECT_DIR$/src/com.dbutils/DButil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="8" column="99" selection-start-line="8" selection-start-column="99" selection-end-line="8" selection-end-column="99" />
