@@ -16,6 +16,5 @@ public interface CompanyFCI  {
     Collection<Coupon> getCouponByType(couponTypes couponType);
     Collection<Coupon> getCouponsUpToPrice(double price);
     Collection<Coupon> getCouponsUpToDate(LocalDate date);
-    boolean login(String name, String password);
     Company getCompanyInfo();
 }

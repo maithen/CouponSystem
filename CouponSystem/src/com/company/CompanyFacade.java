@@ -77,14 +77,8 @@ public class CompanyFacade  implements CompanyFCI,CouponClientFacade {
 
 
     @Override
-    public boolean login(String name, String password) {
-        return companyDBDAO.login(name,password);
-    }
-
-
-    @Override
     public CouponClientFacade login(String name, String password, clientType type) {
-        if(login(name,password) && type.equals(clientType.Company)){
+        if(companyDBDAO.login(name,password) && type.equals(clientType.Company)){
             return new CompanyFacade(name,password);
         }
         return null;

@@ -12,7 +12,7 @@ public interface AdminFCI {
     void removeCompany(Company company);
     void updateCompany(Company company);
     Collection<Company> getCompanies();
-    Company getCompany(long id) throws DoesNotExistException;
+    Company getCompany(long id);
     void addCustomer(Customer customer); //no identical customer names
     void removeCustomer(Customer customer);
     void updateCustomer(Customer customer, String password); //without customer name

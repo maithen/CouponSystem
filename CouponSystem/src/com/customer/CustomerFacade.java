@@ -49,14 +49,10 @@ public class CustomerFacade implements CustomerFCI, CouponClientFacade {
         return customerDBDAO.getCouponsByPrice(customer,price);
     }
 
-    @Override
-    public boolean login(String custName, String password)  {
-        return customerDBDAO.login(custName,password);
-    }
 
     @Override
     public CouponClientFacade login(String name, String password, clientType type) {
-        if(login(name,password) && type.equals(clientType.Customer)){
+        if(customerDBDAO.login(name,password) && type.equals(clientType.Customer)){
             return new CustomerFacade(name,password);
         }
         return null;
