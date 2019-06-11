@@ -6,5 +6,5 @@ import CompanyPackage.CompanyFCI;
 import CustomerPackage.CustomerFCI;
 
 public  abstract class Client {
-
+	
 }
