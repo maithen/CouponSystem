@@ -2,9 +2,11 @@ package com.company;
 
 import java.util.*;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.coupon.Coupon;
 
-
+@XmlRootElement
 public class Company {
 
     private long id;

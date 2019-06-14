@@ -19,99 +19,10 @@ import com.coupon.couponTypes;
 import com.main.CouponClientFacade;
 import com.main.clientType;
 
-@Path("company")
-public class CompanyServices implements CompanyFCI,CouponClientFacade {
-	
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Override
-	public void createCoupon(Coupon coupon) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@DELETE
-	@Consumes (MediaType.APPLICATION_JSON)
-	@Override
-	public void removeCoupon(Coupon coupon) {
-		// TODO Auto-generated method stub
-		
-	}
-	@PUT
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Override
-	public void updateCouponPrice(long id, double price) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@PUT
-	@Consumes
-	@Override
-	public void updateCouponEndDate(long id, int day, int month, int year) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@GET
-	@Consumes
-	@Produces(MediaType.APPLICATION_JSON)
-	@Override
-	public Coupon getCoupon(long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@GET
-	@Consumes
-	@Produces(MediaType.APPLICATION_JSON)
-	@Override
-	public Collection<Coupon> getAllCoupons() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@GET
-	@Consumes
-	@Produces(MediaType.APPLICATION_JSON)
-	@Override
-	public Collection<Coupon> getCouponByType(couponTypes couponType) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@GET
-	@Consumes
-	@Produces(MediaType.APPLICATION_JSON)
-	@Override
-	public Collection<Coupon> getCouponsUpToPrice(double price) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@GET
-	@Consumes
-	@Produces(MediaType.APPLICATION_JSON)
-	@Override
-	public Collection<Coupon> getCouponsUpToDate(LocalDate date) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+public class CompanyServices {
 	
 	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Override
-	public Company getCompanyInfo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Override
-	public CouponClientFacade login(String name, String password, clientType type) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }

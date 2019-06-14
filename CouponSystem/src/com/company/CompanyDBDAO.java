@@ -61,7 +61,7 @@ public class CompanyDBDAO implements CompanyDAO {
                 return true;
             }
         } catch (SQLException e) {
-            throw new DoesNotExistException("Username or Password invalid.");
+            System.out.println( new DoesNotExistException("Username or Password invalid.").getMessage());
         }finally {
             DButil.closingConnection(myCon);
         }
@@ -92,9 +92,9 @@ public class CompanyDBDAO implements CompanyDAO {
 
                 } catch (SQLIntegrityConstraintViolationException ex) {
                    if(ex.getLocalizedMessage().contains("for key 'PRIMARY'")){
-                       throw new DuplicateException(c1,c1.getId());
+                   System.out.println(new  DuplicateException(c1,c1.getId()).getMessage());
                    }else{
-                       throw new DuplicateException(c1,c1.getName());
+                	   System.out.println(new DuplicateException(c1,c1.getName()).getMessage());
                    }
 
                 } catch (SQLException e) {
@@ -128,7 +128,7 @@ public class CompanyDBDAO implements CompanyDAO {
 
 
             if (rowsAffected == 0) {
-                throw new DoesNotExistException(c1);
+            	 System.out.println(new DoesNotExistException(c1).getMessage());
             } else {
                 System.out.printf("Company: %s, removed. \n", c1.getName());
             }
@@ -153,14 +153,15 @@ public class CompanyDBDAO implements CompanyDAO {
 
         try(Statement myStmt = myCon.createStatement())  {
 
-            String sql = "UPDATE companies " + " SET Password='" + c1.getPassword()
+            String sql = "UPDATE companies " 
+            		+ " SET Password='" + c1.getPassword()
                     + "', Email='" + c1.getEmail()
                     + "' WHERE ID_=" + c1.getId();
 
             int rowsAffected = myStmt.executeUpdate(sql);
 
             if(rowsAffected ==0){
-                throw new DoesNotExistException(c1);
+            	 System.out.println( new DoesNotExistException(c1));
             }else {
                 System.out.printf("CompanyID: %d,Updated \n", c1.getId());
             }
@@ -197,7 +198,7 @@ public class CompanyDBDAO implements CompanyDAO {
                 company.setPassword(resultSet.getString("Password"));
                 company.setEmail(resultSet.getString("Email"));}
                 else{
-                    throw new DoesNotExistException(company);
+                	 System.out.println(new DoesNotExistException(company).getMessage());
                 }
 
         }catch (SQLException dn){
@@ -230,12 +231,12 @@ public class CompanyDBDAO implements CompanyDAO {
                 company.setPassword(resultSet.getString("Password"));
                 company.setEmail(resultSet.getString("Email"));}
             else {
-                throw new DoesNotExistException(company);
+               System.out.println(new DoesNotExistException(company).getMessage());
             }
 
 
         }catch (SQLException e) {
-          throw new ConnectionError(e);
+        	 System.out.println(new ConnectionError(e).getMessage());
 
         }finally{
             ConnectionPool.getInstance().returnConnection(myCon);
@@ -265,7 +266,7 @@ public class CompanyDBDAO implements CompanyDAO {
             }
 
         } catch (SQLException e) {
-            throw new ConnectionError("Cannot reach companies");
+        	 System.out.println(new ConnectionError("Cannot reach companies").getMessage());
 
         } finally {
             ConnectionPool.getInstance().returnConnection(myCon);
@@ -273,7 +274,7 @@ public class CompanyDBDAO implements CompanyDAO {
 
         }
         if(companies.isEmpty()){
-            throw new DoesNotExistException(companies,"Companies");
+            System.out.println(new DoesNotExistException(companies,"Companies").getMessage());
         }
 
         return companies;
@@ -316,13 +317,13 @@ public class CompanyDBDAO implements CompanyDAO {
 
                 }
             } catch (SQLException exc) {
-                throw new ConnectionError(exc);
+            	 System.out.println( new ConnectionError(exc).getMessage());
             } finally {
                 ConnectionPool.getInstance().returnConnection(myCon);
                 DButil.closingConnection(myCon);
             }
             if(coupons.isEmpty()){
-                throw new DoesNotExistException(coupons,"Coupons");
+            	 System.out.println(new DoesNotExistException(coupons,"Coupons").getMessage());
             }
             return coupons;
 
@@ -346,7 +347,7 @@ public class CompanyDBDAO implements CompanyDAO {
             }
         }
         if(coupons.isEmpty()){
-            throw new DoesNotExistException(coupons,"Coupons");
+        	 System.out.println(new DoesNotExistException(coupons,"Coupons").getMessage());
         }
         return coupons;
     }
@@ -367,7 +368,7 @@ public class CompanyDBDAO implements CompanyDAO {
             }
         }
         if(coupons.isEmpty()){
-            throw new DoesNotExistException(coupons,"Coupons");
+        	 System.out.println(new DoesNotExistException(coupons,"Coupons").getMessage());
         }
         return coupons;
     }
@@ -387,7 +388,7 @@ public class CompanyDBDAO implements CompanyDAO {
             }
         }
         if(couponByType.isEmpty()){
-            throw new DoesNotExistException(couponByType,"Coupons");
+        	 System.out.println(new DoesNotExistException(couponByType,"Coupons").getMessage());
         }
         return couponByType;
 
