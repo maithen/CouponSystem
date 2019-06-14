@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+@XmlRootElement
 public class Coupon {
 
     private long id;
