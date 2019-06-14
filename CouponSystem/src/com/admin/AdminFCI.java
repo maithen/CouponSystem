@@ -15,7 +15,7 @@ public interface AdminFCI {
     Company getCompany(long id);
     void addCustomer(Customer customer); //no identical customer names
     void removeCustomer(Customer customer);
-    void updateCustomer(Customer customer, String password); //without customer name
+    void updateCustomer(Customer customer); //without customer name
     Collection<Customer> getCustomers();
     Customer getCustomer(long id);
 

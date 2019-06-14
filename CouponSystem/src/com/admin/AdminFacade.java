@@ -2,6 +2,8 @@ package com.admin;
 
 import java.util.Collection;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.company.Company;
 import com.company.CompanyDBDAO;
 import com.customer.Customer;
@@ -11,6 +13,7 @@ import com.main.Client;
 import com.main.CouponClientFacade;
 import com.main.clientType;
 
+@XmlRootElement
 public class AdminFacade implements AdminFCI, CouponClientFacade {
 
     private CompanyDBDAO companyDBDAO = new CompanyDBDAO();
@@ -59,8 +62,7 @@ public class AdminFacade implements AdminFCI, CouponClientFacade {
     }
 
     @Override
-    public void updateCustomer (Customer customer, String password){
-        customer.setPassword(password);
+    public void updateCustomer (Customer customer){
         customerDBDAO.updateCustomer(customer);
     }
 

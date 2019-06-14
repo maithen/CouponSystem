@@ -1,8 +1,17 @@
 package com.services;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -13,7 +22,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
 
 import com.admin.AdminFCI;
 import com.admin.AdminFacade;
@@ -24,99 +38,119 @@ import com.exceptions.DoesNotExistException;
 import com.main.CouponClientFacade;
 import com.main.CouponSystem;
 import com.main.clientType;
+import com.sun.jersey.spi.resource.Singleton;
 
 
 @Path("admin")
-public class AdminService implements AdminFCI, CouponClientFacade {
-			
+@Consumes(MediaType.APPLICATION_JSON)
+public class AdminService {
+	
+	
+ 
+	@Context 
+	HttpServletRequest request;
+	
+
+	
+	private static AdminFacade adminFacade;
+	
 	
 	public AdminService() {
 		
 	}
 	
+	
+	@GET
+	public void login(JSONObject login) throws JSONException {
+	
+
+		adminFacade = (AdminFacade) CouponSystem.getInstance().login(login.getString("name"), login.getString("password"), clientType.valueOf(login.getString("type")));
+		 System.out.println(adminFacade.toString());
+
+
+	
+	}
+
 	@POST
-	@Override
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("addCompany")
 	public void addCompany(Company company) {
-		// TODO Auto-generated method stub
+
+		System.out.println(adminFacade.toString());
+		adminFacade.addCompany(company);
 		
 	}
-	
+
 	@DELETE
-	@Override
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("removeCompany")
 	public void removeCompany(Company company) {
-		// TODO Auto-generated method stub
+		adminFacade.removeCompany(company);
 		
 	}
+
 	@PUT
-	@Override
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("updateCompany")
 	public void updateCompany(Company company) {
-		// TODO Auto-generated method stub
+		adminFacade.updateCompany(company);
 		
 	}
-	
+
 	@GET
-	@Override
-	@Produces(MediaType.APPLICATION_JSON)
+	@Path("getCompanies")
 	public Collection<Company> getCompanies() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return adminFacade.getCompanies();
 	}
-	
+
 	@GET
-	@Override
-	@Produces(MediaType.APPLICATION_JSON)
-	public Company getCompany(long id) {
+	@Path("getCompany")
+	public Company getCompany(@QueryParam("id")long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return adminFacade.getCompany(id);
 	}
-	
+
 	@POST
-	@Override
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("addCustomer")
 	public void addCustomer(Customer customer) {
-		// TODO Auto-generated method stub
+		adminFacade.addCustomer(customer);
 		
 	}
+
 	@DELETE
-	@Override
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("removeCustomer")
 	public void removeCustomer(Customer customer) {
-		// TODO Auto-generated method stub
+		adminFacade.removeCustomer(customer);
 		
 	}
-	
+
 	@PUT
-	@Override
-	public void updateCustomer(Customer customer, String password) {
-		// TODO Auto-generated method stub
+	@Path("updateCustomer")
+	public void updateCustomer(Customer customer) {
+		adminFacade.updateCustomer(customer);
 		
 	}
+
 	@GET
-	@Override
-	@Produces(MediaType.APPLICATION_JSON)
+	@Path("getCustomers")
 	public Collection<Customer> getCustomers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@GET
-	@Override
-	@Produces(MediaType.APPLICATION_JSON)
-	public Customer getCustomer(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return adminFacade.getCustomers();
 	}
 	
+
 	@GET
-	@Override
-	@Produces(MediaType.APPLICATION_JSON)
-	public CouponClientFacade login(String name, String password, clientType type) {
-		// TODO Auto-generated method stub
-		return null;
+	@Path("getCustomer")
+	public Customer getCustomer(@QueryParam("id") long id) {
+		return adminFacade.getCustomer(id);
 	}
 	
+	
+
+
+
+		
+
+	
+	
+
 	
 	
 }
