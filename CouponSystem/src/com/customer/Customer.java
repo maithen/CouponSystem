@@ -1,10 +1,13 @@
 package com.customer;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
-import com.coupon.Coupon;
+import javax.xml.bind.annotation.XmlRootElement;
 
+import com.coupon.Coupon;
+@XmlRootElement
 public class Customer {
 
     private long id;

@@ -1,11 +1,13 @@
 package com.main;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.admin.AdminFacade;
 import com.company.CompanyFacade;
 import com.customer.CustomerFacade;
 import com.dbutils.ConnectionPool;
 
-
+@XmlRootElement
 public class CouponSystem implements CouponClientFacade{
 
     private static CouponSystem couponSystem = new CouponSystem();

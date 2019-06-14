@@ -38,9 +38,9 @@ public class CustomerDBDAO implements CustomerDAO{
 
         } catch (SQLIntegrityConstraintViolationException e) {
             if(e.getLocalizedMessage().contains("for key 'PRIMARY'")){
-                throw new DuplicateException(c1,c1.getId());
+                System.out.println(new DuplicateException(c1,c1.getId()).getMessage());
             }else{
-                throw new DuplicateException(c1,c1.getCustomerName());
+            	 System.out.println(new DuplicateException(c1,c1.getCustomerName()).getMessage());
             }
 
         } catch (SQLException e) {
@@ -64,12 +64,11 @@ public class CustomerDBDAO implements CustomerDAO{
             myStmt.setLong(1,c1.getId());
             myStmt.setString(2,c1.getCustomerName());
             myStmt.setString(3,c1.getPassword());
-            System.out.println(myStmt);
             int rowsAffected = myStmt.executeUpdate();
             if(rowsAffected!=0) {
                 System.out.println(String.format("Customer ID:%d, Deleted.", c1.getId()));
             } else {
-                throw new DoesNotExistException(c1);
+            	 System.out.println(new DoesNotExistException(c1).getMessage());
             }
         }catch(SQLException e){
             e.printStackTrace();
@@ -85,20 +84,19 @@ public class CustomerDBDAO implements CustomerDAO{
         PreparedStatement myStmt;
         try{
             myCon = ConnectionPool.getInstance().getConnection();
-            String sql = "UPDATE customers SET ID_=?, Customer_name=?, Password=? WHERE ID_=?";
+            String sql = "UPDATE customers SET ID_=?, Password=? WHERE ID_=?";
 
             myStmt = myCon.prepareStatement(sql);
             myStmt.setLong(1,c1.getId());
-            myStmt.setString(2,c1.getCustomerName());
-            myStmt.setString(3,c1.getPassword());
-            myStmt.setLong(4,c1.getId());
+            myStmt.setString(2,c1.getPassword());
+            myStmt.setLong(3,c1.getId());
 
             System.out.println(myStmt);
             int rowsAffected = myStmt.executeUpdate();
             if(rowsAffected!=0)
                 System.out.println(String.format("Customer ID:%d , Updated.", c1.getId()));
             else
-                throw new DoesNotExistException(c1);
+            	 System.out.println(new DoesNotExistException(c1).getMessage());
         }catch(SQLException e){
             e.printStackTrace();
         }finally {
@@ -124,7 +122,7 @@ public class CustomerDBDAO implements CustomerDAO{
                 customer.setPassword(rs.getString(3));
                 rs.close();
             }else{
-                throw new DoesNotExistException(customer,id);
+            	 System.out.println(new DoesNotExistException(customer,id).getMessage());
             }
 
         }catch (SQLException e){
@@ -155,7 +153,7 @@ public class CustomerDBDAO implements CustomerDAO{
                 customer.setPassword(rs.getString(3));
                 rs.close();
             }else{
-                throw new DoesNotExistException(customer);
+            	 System.out.println(new DoesNotExistException(customer).getMessage());
             }
 
         }catch (SQLException e){
@@ -198,7 +196,7 @@ public class CustomerDBDAO implements CustomerDAO{
             DButil.closingConnection(myCon);
         }
         if(customers.isEmpty()){
-            throw new DoesNotExistException(customers,"Customers");
+        	 System.out.println(new DoesNotExistException(customers,"Customers").getMessage());
         }
         return customers;
 
@@ -218,7 +216,7 @@ public class CustomerDBDAO implements CustomerDAO{
 
             myStmt.close();
         }catch (SQLIntegrityConstraintViolationException e){
-            throw new DuplicateException(coupon);
+        	 System.out.println(new DuplicateException(coupon).getMessage());
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -267,7 +265,7 @@ public class CustomerDBDAO implements CustomerDAO{
             DButil.closingConnection(myCon);
         }
         if(coupons.isEmpty()){
-            throw new DoesNotExistException(coupons,"Coupons");
+        	 System.out.println(new DoesNotExistException(coupons,"Coupons").getMessage());
         }
         return coupons;
     }
@@ -280,7 +278,7 @@ public class CustomerDBDAO implements CustomerDAO{
             }
         }
         if(couponType.isEmpty()){
-            throw new DoesNotExistException(couponType,"Coupons");
+        	 System.out.println(new DoesNotExistException(couponType,"Coupons").getMessage());
         }
         return couponType;
     }
@@ -294,7 +292,7 @@ public class CustomerDBDAO implements CustomerDAO{
             }
         }
         if(couponPrice.isEmpty()){
-            throw new DoesNotExistException(couponPrice,"Coupons");
+        	 System.out.println( new DoesNotExistException(couponPrice,"Coupons").getMessage());
         }
         return couponPrice;
     }
@@ -317,7 +315,7 @@ public class CustomerDBDAO implements CustomerDAO{
 
             }
         } catch (SQLException e){
-            throw new DoesNotExistException("Username or Password Incorrect.");
+        	 System.out.println(new DoesNotExistException("Username or Password Incorrect.").getMessage());
 
             // e.printStackTrace();
         }finally {
@@ -325,7 +323,7 @@ public class CustomerDBDAO implements CustomerDAO{
             DButil.closingConnection(myCon);
         }
 
-        throw new DoesNotExistException("Password is Case Sensitive.");
-
+        System.out.println(new DoesNotExistException("Password is Case Sensitive."));
+        return false;
     }
 }
