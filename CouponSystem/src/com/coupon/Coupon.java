@@ -1,16 +1,32 @@
+
 package com.coupon;
 
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-@XmlRootElement
-public class Coupon {
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
 
+import com.sun.xml.internal.txw2.annotation.XmlAttribute;
+
+@XmlRootElement()
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Coupon {
+	
+	
     private long id;
-    private String title;
+    private String title; 
+    @XmlElement(name="startDate")
+    @XmlJavaTypeAdapter(type=LocalDate.class, value=DateAdapter.class)
     private LocalDate startDate;
+    @XmlElement(name="endDate")
+    @XmlJavaTypeAdapter(type=LocalDate.class, value=DateAdapter.class)
     private LocalDate endDate;
     private int amount;
     private couponTypes type;
@@ -18,9 +34,14 @@ public class Coupon {
     private double price;
     private String image;
 
+    
+    public Coupon(){
+    	
+    }
+   
 
     public Coupon(long id, String title, int amount, couponTypes type, String message, double price, String image) {
-        LocalDate initialDate = LocalDate.now();
+    	LocalDate initialDate = LocalDate.now();
         setId(id);
         setTitle(title);
         setStartDate(initialDate);
@@ -31,9 +52,7 @@ public class Coupon {
         setPrice(price);
         setImage(image);
     }
-    public Coupon(){
-
-    }
+   
 
     public long getId() {
         return id;
@@ -50,11 +69,13 @@ public class Coupon {
     public void setTitle(String title) {
         this.title = title;
     }
-
+  
+   
     public LocalDate getStartDate() {
+    	
         return startDate;
     }
-
+    
     public void setStartDate(LocalDate startDate) {
 
         this.startDate = startDate;
